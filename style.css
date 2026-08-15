@@ -1009,25 +1009,31 @@ button {
     }
 
 }/* =====================================================
-   MOBILE SIDEBAR FIX
+ /* =====================================================
+   MOBILE SIDEBAR - FINAL FIX
 ===================================================== */
 
+/* Overlay hidden on desktop */
 .sidebar-overlay {
     display: none;
 }
 
+/* =====================================================
+   TABLET / MOBILE
+===================================================== */
 
-/* MOBILE */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
     .sidebar {
-
         position: fixed;
-        left: 0;
+
         top: 0;
+        left: 0;
         bottom: 0;
 
         width: 280px;
+
+        background: var(--sidebar);
 
         z-index: 1000;
 
@@ -1036,17 +1042,43 @@ button {
         transition: transform 0.3s ease;
 
         overflow-y: auto;
+
+        visibility: visible;
     }
 
-
+    /* OPEN SIDEBAR */
     .sidebar.open {
-
         transform: translateX(0);
-
     }
 
+    /* MAIN CONTENT */
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+    }
 
+    /* MOBILE MENU BUTTON */
+    .mobile-menu {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 42px;
+        height: 42px;
+
+        background: transparent;
+
+        font-size: 24px;
+
+        margin-right: 10px;
+
+        color: var(--text);
+    }
+
+    /* OVERLAY */
     .sidebar-overlay {
+        display: block;
 
         position: fixed;
 
@@ -1056,45 +1088,37 @@ button {
 
         z-index: 999;
 
-        display: block;
-
         opacity: 0;
 
         visibility: hidden;
 
+        pointer-events: none;
+
         transition:
             opacity 0.3s ease,
             visibility 0.3s ease;
-
     }
 
-
+    /* SHOW OVERLAY */
     .sidebar-overlay.show {
-
         opacity: 1;
 
         visibility: visible;
 
+        pointer-events: auto;
     }
 
-
-    .main-content {
-
-        width: 100%;
-
-        margin-left: 0;
-
-    }
+}
 
 
-    .mobile-menu {
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
-        display: flex;
+@media (max-width: 600px) {
 
-        align-items: center;
-
-        justify-content: center;
-
+    .sidebar {
+        width: 280px;
     }
 
 }
