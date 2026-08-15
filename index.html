@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart POS | Sales & Inventory Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         LOGIN SCREEN
+    ========================== -->
+
+    <div id="loginScreen" class="login-screen">
+
+        <div class="login-box">
+
+            <div class="logo">
+                SMART<span>POS</span>
+            </div>
+
+            <p class="login-subtitle">
+                Sales & Inventory Management System
+            </p>
+
+            <div class="input-group">
+                <label>Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                    value="admin"
+                >
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    value="123456"
+                >
+            </div>
+
+            <button class="login-btn" onclick="login()">
+                Sign In
+            </button>
+
+            <p class="demo-login">
+                Demo Login: admin / 123456
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN APPLICATION
+    ========================== -->
+
+    <div id="app" class="app hidden">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+                SMART<span>POS</span>
+            </div>
+
+            <div class="brand-subtitle">
+                Management System
+            </div>
+
+
+            <nav class="navigation">
+
+                <button
+                    class="nav-item active"
+                    onclick="showPage('dashboard', this)"
+                >
+                    <span>▦</span>
+                    Dashboard
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('pos', this)"
+                >
+                    <span>▣</span>
+                    Point of Sale
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('products', this)"
+                >
+                    <span>□</span>
+                    Products
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('inventory', this)"
+                >
+                    <span>◫</span>
+                    Inventory
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('customers', this)"
+                >
+                    <span>♙</span>
+                    Customers
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('suppliers', this)"
+                >
+                    <span>♧</span>
+                    Suppliers
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('purchases', this)"
+                >
+                    <span>↙</span>
+                    Purchases
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('sales', this)"
+                >
+                    <span>↗</span>
+                    Sales
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('expenses', this)"
+                >
+                    <span>−</span>
+                    Expenses
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('reports', this)"
+                >
+                    <span>▥</span>
+                    Reports
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('users', this)"
+                >
+                    <span>♟</span>
+                    Users
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="showPage('settings', this)"
+                >
+                    <span>⚙</span>
+                    Settings
+                </button>
+
+            </nav>
+
+
+            <button class="logout-btn" onclick="logout()">
+                ⇥ Logout
+            </button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <button
+                    class="mobile-menu"
+                    onclick="toggleSidebar()"
+                >
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <h1 id="pageTitle">
+                        Dashboard
+                    </h1>
+
+                    <p id="currentDate">
+                        Loading date...
+                    </p>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <span class="store-status">
+                        ● Main Store
+                    </span>
+
+                    <div class="avatar">
+                        A
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+
+            <section id="pageContent">
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- TOAST MESSAGE -->
+
+    <div
+        id="toast"
+        class="toast"
+    >
+        Success
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
