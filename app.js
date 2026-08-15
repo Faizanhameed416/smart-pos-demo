@@ -4141,18 +4141,54 @@ function resetDemoData() {
 
 function toggleSidebar() {
 
-    const sidebar =
-        document.querySelector(
-            ".sidebar"
-        );
-
+    const sidebar = document.querySelector(".sidebar");
 
     if (!sidebar) return;
 
+    sidebar.classList.toggle("open");
 
-    sidebar.classList.toggle(
-        "open"
-    );
+    updateSidebarOverlay();
+
+}
+
+
+// =====================================================
+// CLOSE MOBILE SIDEBAR
+// =====================================================
+
+function closeSidebar() {
+
+    const sidebar = document.querySelector(".sidebar");
+
+    if (!sidebar) return;
+
+    sidebar.classList.remove("open");
+
+    updateSidebarOverlay();
+
+}
+
+
+// =====================================================
+// SIDEBAR OVERLAY
+// =====================================================
+
+function updateSidebarOverlay() {
+
+    const sidebar = document.querySelector(".sidebar");
+    const overlay = document.getElementById("sidebarOverlay");
+
+    if (!sidebar || !overlay) return;
+
+    if (sidebar.classList.contains("open")) {
+
+        overlay.classList.add("show");
+
+    } else {
+
+        overlay.classList.remove("show");
+
+    }
 
 }
 
